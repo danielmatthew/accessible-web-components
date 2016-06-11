@@ -1,1 +1,1 @@
-# a11y-patterns
+# a11y-patterns## Browser behaviour notes### Chrome- Includes links in its normal tab-order### Safari- Tab-order ignores links: only elements with an explicit `tabindex`, or "natural" elements such as a button or input.### Firefox- As with Safari, Firefox will ignore links when navigating through the document with the tabkey. 
