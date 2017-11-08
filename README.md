@@ -15,8 +15,8 @@ With the introduction of WAI-ARIA however, `tabindex` is now applicable to all r
 
 - Tab and Shift + Tab key move focus among widgets and standard HTML controls
 - Widgets with `tabindex = 0` will be added to the tab sequence based on document order
-- Widgets with `tabindex` > 0 will be added to the tab sequence based on the tabindex value
-- Widgets with `tabindex` < 0 are removed from the tab sequence, but can still received keyboard focus programatically. 
+- Widgets with `tabindex` > 0 will be added to the tab sequence based on the integer value
+- Widgets with `tabindex` < 0 are removed from the tab sequence, but can still received keyboard focus programatically.
 
 When a widget has keyboard focus, Spacebar, Enter, and other keyboard commands can be used to navigate within a widget, or trigger a function associated with a widget. Best practice suggests to use the same keybindings as are used within the host OS.
 
@@ -33,7 +33,7 @@ Essentially, any element given a `tabindex` property of 0 may receive focus. You
 - Includes links in its normal tab-order
 
 ### Safari
-- By default, Safari will ignore links: only elements with an explicit `tabindex`, or "natural" elements such as a button or input. However, adding the option key will include links. 
+- By default, Safari will ignore links: only elements with an explicit `tabindex`, or "natural" elements such as a button or input. However, adding the option key will include links.
 
 ### Firefox
-- As with Safari, Firefox will ignore links when navigating through the document with the tabkey. The "Full Keyboard Access" property under the Keyboard preferences menu needs to be changed from "Text boxes and lists only" to "All Controls". 
+- As with Safari, Firefox will ignore links when navigating through the document with the tabkey. The "Full Keyboard Access" property under the Keyboard preferences menu needs to be changed from "Text boxes and lists only" to "All Controls".
