@@ -1,0 +1,41 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="dm-a11y-alert">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>[[ title ]]</h2>
+    <p>[[ message ]]</p>
+  </template>
+
+  <script>
+    /**
+     * `dm-a11y-alert`
+     * An accessible alert
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class DmA11yAlert extends Polymer.Element {
+      static get is() { return 'dm-a11y-alert'; }
+      static get properties() {
+        return {
+          title: {
+            type: String,
+            value: 'Uh-oh!'
+          },
+          message: {
+            type: String,
+            value: 'This is the alert message'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(DmA11yAlert.is, DmA11yAlert);
+  </script>
+</dom-module>
