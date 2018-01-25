@@ -1,0 +1,24 @@
+{
+  "name": "a11y-patterns",
+  "version": "1.0.0",
+  "description": "A collection of accessible web components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielmatthew/a11y-patterns.git"
+  },
+  "author": "Daniel Matthew",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielmatthew/a11y-patterns/issues"
+  },
+  "homepage": "https://github.com/danielmatthew/a11y-patterns#readme",
+  "devDependencies": {
+    "eslint": "4.16.0",
+    "eslint-plugin-prettier": "2.5.0",
+    "prettier": "1.10.2"
+  }
+}
