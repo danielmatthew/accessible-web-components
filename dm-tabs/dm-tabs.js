@@ -163,6 +163,43 @@ class DMTabs extends HTMLElement {
     newTab.focus();
   }
 
+  _onKeyDown(event) {
+    if (event.target.getAttribute('role') !== 'tab') {
+      return;
+    }
+
+    if (event.altKey) {
+      return;
+    }
+
+    let newTab;
+    switch (event.keyCode) {
+      case KEYCODE.LEFT:
+      case KEYCODE.UP:
+        newTab = this._prevTab();
+        break;
+
+      case KEYCODE.RIGHT:
+      case KEYCODE.DOWN:
+        newtab = this._nextTab();
+        break;
+
+      case KEYCODE.HOME:
+        newTab = this._firstTab();
+        break;
+
+      case KEYCODE.END:
+        newTab = this._lastTab();
+        break;
+
+      default:
+        return;
+    }
+
+    event.preventDefault();
+    this._selectTab(newTab);
+  }
+
   _onClick(event) {
     if (event.target.getAttribute("role") !== "tab") {
       return;
@@ -174,8 +211,55 @@ class DMTabs extends HTMLElement {
 
 customElements.define('dm-tabs', DMTabs);
 
-class DMTab extends HTMLElement {
+let dmTabCounter = 0;
 
+class DMTab extends HTMLElement {
+  static get observedAttributes() {
+    return ['selected'];
+  }
+
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    // Element changes role to tab
+    this.setAttribute('role', 'tab');
+    if (!this.id) {
+      this.id = `dm-tab-generated-$(dmTabCounter++}`;
+    }
+
+    this.setAttribute('aria-selected', 'false');
+    this.setAttribute('tabindex', -1);
+    this._upgradeProperty('selected');
+  }
+
+  _upgradeProperty(prop) {
+    if (this.hasOwnProperty(prop)) {
+      let value = this[prop];
+      delete this[prop];
+      this[prop] = value;
+    }
+  }
+
+  attributeChangedCallback() {
+    const value = this.hasAttribute('selected');
+    this.setAttribute('aria-selected', value);
+    this.setAttribute('tabindex', value ? 0 : -1);
+  }
+
+  set selected(value) {
+    value = Boolean(value);
+    if (value) {
+      this.setAttribute('selected', '');
+    } else {
+      this.removeAttribute('selected');
+    }
+  }
+
+  get selected() {
+    return this.hasAttribute('selected');
+  }
 }
 
 customElements.define('dm-tab', DMTab);
