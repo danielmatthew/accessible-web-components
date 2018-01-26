@@ -264,6 +264,8 @@ class DMTab extends HTMLElement {
 
 customElements.define('dm-tab', DMTab);
 
+let dmPanelCounter = 0;
+
 class DMPanel extends HTMLElement {
   constructor() {
     super();
