@@ -16,7 +16,7 @@
         flex-wrap: wrap;
       }
 
-      ::slotted(dm-tab-panel) {
+      ::slotted(dm-panel) {
         flex-basis: 100%;
       }
     </style>
@@ -50,14 +50,14 @@
       this.addEventListener("keydown", this._onKeyDown);
       this.addEventListener("click", this._onClick);
 
-      if (!this.hasAttribute["role"]) {
+      if (!this.hasAttribute("role")) {
         this.setAttribute("role", "tablist");
       }
 
-      Promise.all([
-        customElements.whenDefined("dm-tab"),
-        customElements.whenDefined("dm-panel")
-      ]).then(_ => this._linkPanels());
+      // Promise.all([
+      //   customElements.whenDefined("dm-tab"),
+      //   customElements.whenDefined("dm-panel")
+      // ]).then(_ => this._linkPanels());
     }
 
     /**
@@ -80,9 +80,7 @@
 
       tabs.forEach(tab => {
         const panel = tab.nextElementSibling;
-
-        if (panel.tagname.toLowerCase() !== "dm-panel") {
-          console.error(`Tab #{tab.id} is not a sibling of a panel`);
+        if (panel.tagName.toLowerCase() !== "dm-panel") {
           return;
         }
 
@@ -114,7 +112,7 @@
      */
     _panelForTab(tab) {
       const panelId = tab.getAttribute("aria-controls");
-      return this.querySelector(`#{panelId}`);
+      return this.querySelector(`#${panelId}`);
     }
 
     _prevTab() {
@@ -182,7 +180,7 @@
 
         case KEYCODE.RIGHT:
         case KEYCODE.DOWN:
-          newtab = this._nextTab();
+          newTab = this._nextTab();
           break;
 
         case KEYCODE.HOME:
@@ -227,7 +225,7 @@
       // Element changes role to tab
       this.setAttribute('role', 'tab');
       if (!this.id) {
-        this.id = `dm-tab-generated-$(dmTabCounter++}`;
+        this.id = `dm-tab-generated-${dmTabCounter++}`;
       }
 
       this.setAttribute('aria-selected', 'false');
