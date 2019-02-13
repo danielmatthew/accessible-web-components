@@ -1,25 +1,43 @@
 {
-  "name": "a11y-patterns",
+  "name": "accessible-web-components",
   "version": "1.0.0",
   "description": "A collection of accessible web components",
   "main": "index.js",
+  "lint-staged": {
+    "*.js": ["eslint --fix", "prettier --write", "git add"]
+  },
   "scripts": {
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint:eslint": "eslint --ext .js,.html .",
+    "lint:prettier":
+      "prettier '**/*.js' --list-different|| (echo '↑↑ these files are not prettier formatted ↑↑' && exit 1)",
+    "format": "npm run format:eslint && npm run format:prettier",
+    "format:eslint": "eslint --ext .js,.html . --fix",
+    "format:prettier": "prettier '**/*.js' --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danielmatthew/a11y-patterns.git"
+    "url": "git+https://github.com/danielmatthew/accessible-web-components.git"
   },
   "author": "Daniel Matthew",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/danielmatthew/a11y-patterns/issues"
+    "url": "https://github.com/danielmatthew/accessible-web-components/issues"
   },
-  "homepage": "https://github.com/danielmatthew/a11y-patterns#readme",
+  "homepage": "https://github.com/danielmatthew/accessible-web-components#readme",
   "devDependencies": {
-    "eslint": "4.16.0",
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "@open-wc/eslint-config": "^0.3.10",
+    "@open-wc/prettier-config": "^0.1.6",
+    "eslint": "^5.13.0",
     "eslint-config-prettier": "2.9.0",
     "eslint-plugin-prettier": "2.5.0",
-    "prettier": "1.10.2"
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.3",
+    "lit-element": "^2.0.1",
+    "owc-dev-server": "^0.1.3",
+    "prettier": "^1.10.2"
   }
 }
