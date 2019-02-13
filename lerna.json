@@ -1,4 +1,10 @@
 {
-  "packages": ["packages/*"],
+  "command": {
+    "publish": {
+      "ignoreChanges": ["*.md"],
+      "message": "chore(release): publish"
+    }
+  },
+  "packages": ["packages/*", "components/*"],
   "version": "independent"
 }
