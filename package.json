@@ -14,7 +14,7 @@
     "format": "npm run format:eslint && npm run format:prettier",
     "format:eslint": "eslint --ext .js,.html . --fix",
     "format:prettier": "prettier '**/*.js' --write",
-    "start": "owc-dev-server",
+    "start": "owc-dev-server --open components/tabs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
