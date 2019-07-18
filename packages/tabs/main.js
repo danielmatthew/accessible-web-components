@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 
 const KEYCODE = {
   DOWN: 40,
@@ -24,8 +24,8 @@ class DMTabs extends LitElement {
     this._panelSlot.addEventListener('slotchange', this._onSlotChange);
   }
 
-  render() {
-    return html`<style>
+  static get styles() {
+    return css`
       :host {
         display: flex;
         flex-wrap: wrap;
@@ -34,7 +34,11 @@ class DMTabs extends LitElement {
       ::slotted(dm-panel) {
         flex-basis: 100%;
       }
-    </style>
+    `;
+  }
+
+  render() {
+    return html`
     <slot name="tab"></slot>
     <slot name="panel"></slot>`;
   }
@@ -207,7 +211,7 @@ class DMTabs extends LitElement {
   }
 }
 
-customElements.define('dm-tabs', DMTabs);
+window.customElements.define('dm-tabs', DMTabs);
 
 let dmTabCounter = 0;
 
