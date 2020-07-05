@@ -2,9 +2,15 @@
   "command": {
     "publish": {
       "ignoreChanges": ["*.md"],
-      "message": "chore(release): publish"
+      "message": "chore(release): publish %s"
+    },
+    "version": {
+      "allowBranch": "master"
     }
   },
   "version": "independent",
-  "packages": ["components/*"]
+  "packages": ["components/*"],
+  "changelogPreset": {
+    "name": "conventionalcommits"
+  }
 }
