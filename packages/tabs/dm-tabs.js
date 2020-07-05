@@ -118,7 +118,7 @@
     _prevTab() {
       const tabs = this._allTabs();
 
-      let newIdx = tabs.findIndex(tab => tab.selected) - 1;
+      const newIdx = tabs.findIndex(tab => tab.selected) - 1;
 
       return tabs[(newIdx + tabs.length) % tabs.length];
     }
@@ -135,7 +135,7 @@
 
     _nextTab() {
       const tabs = this._allTabs();
-      let newIdx = tabs.findIndex(tab => tab.selected) + 1;
+      const newIdx = tabs.findIndex(tab => tab.selected) + 1;
 
       return tabs[newIdx % tabs.length];
     }
@@ -235,7 +235,7 @@
 
     _upgradeProperty(prop) {
       if (this.hasOwnProperty(prop)) {
-        let value = this[prop];
+        const value = this[prop];
         delete this[prop];
         this[prop] = value;
       }
