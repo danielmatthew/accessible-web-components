@@ -9,7 +9,7 @@ const KEYCODE = {
   END: 35,
 };
 
-class DMTabs extends LitElement {
+export class AwcTabs extends LitElement {
   constructor() {
     super();
 
@@ -211,74 +211,3 @@ class DMTabs extends LitElement {
   }
 }
 
-window.customElements.define('dm-tabs', DMTabs);
-
-let dmTabCounter = 0;
-
-class DMTab extends HTMLElement {
-  static get observedAttributes() {
-    return ['selected'];
-  }
-
-  constructor() {
-    super();
-  }
-
-  connectedCallback() {
-    // Element changes role to tab
-    this.setAttribute('role', 'tab');
-    if (!this.id) {
-      this.id = `dm-tab-generated-${dmTabCounter++}`;
-    }
-
-    this.setAttribute('aria-selected', 'false');
-    this.setAttribute('tabindex', -1);
-    this._upgradeProperty('selected');
-  }
-
-  _upgradeProperty(prop) {
-    if (this.hasOwnProperty(prop)) {
-      const value = this[prop];
-      delete this[prop];
-      this[prop] = value;
-    }
-  }
-
-  attributeChangedCallback() {
-    const value = this.hasAttribute('selected');
-    this.setAttribute('aria-selected', value);
-    this.setAttribute('tabindex', value ? 0 : -1);
-  }
-
-  set selected(value) {
-    value = Boolean(value);
-    if (value) {
-      this.setAttribute('selected', '');
-    } else {
-      this.removeAttribute('selected');
-    }
-  }
-
-  get selected() {
-    return this.hasAttribute('selected');
-  }
-}
-
-customElements.define('dm-tab', DMTab);
-
-let dmPanelCounter = 0;
-
-class DMPanel extends HTMLElement {
-  constructor() {
-    super();
-  }
-
-  connectedCallback() {
-    this.setAttribute('role', 'tabpanel');
-    if (!this.id) {
-      this.id = `dm-panel-generated-${dmPanelCounter++}`;
-    }
-  }
-}
-
-customElements.define('dm-panel', DMPanel);

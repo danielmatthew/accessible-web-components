@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Tabs | Accessible Web Components</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script type="module" src="index.js" async></script>
+  </head>
+  <body>
+    <style>
+      main {
+        width: 50%;
+        margin: auto;
+      }
+
+      dm-tab {
+        border: 1px solid black;
+        padding: 20px;
+      }
+
+      dm-panel {
+        padding: 20px;
+        background-color: lightgoldenrodyellow;
+      }
+
+      dm-tab[selected] {
+        background-color: goldenrod;
+      }
+
+      dm-panel:not(:defined),
+      dm-tab:not(:defined),
+      dm-tabs:not(:defined) {
+        display: block;
+      }
+    </style>
+
+    <main>
+      <h1>Tabs</h1>
+
+      <section>
+        <h2>Example</h2>
+        <dm-tabs>
+          <dm-tab role="heading" slot="tab">Tab 1</dm-tab>
+          <dm-panel role="region" slot="panel">
+            <h2>My first tab</h2>
+            <p>Here is some text…</p>
+            <ul>
+              <li>…and a list</p>
+            </ul>
+
+            <button type="button">I am a focusable element within the tab</button>
+          </dm-panel>
+        <dm-tab role="heading" slot="tab">Tab 2</dm-tab>
+        <dm-panel role="region" slot="panel">Content 2</dm-panel>
+        <dm-tab role="heading" slot="tab">Tab 3</dm-tab>
+        <dm-panel role="region" slot="panel">Content 3</dm-panel>
+        <dm-tab role="heading" slot="tab">Tab 4</dm-tab>
+        <dm-panel role="region" slot="panel">Content 4</dm-panel>
+      </dm-tabs>
+    </section>
+
+    <section>
+      <h2>Usage</h2>
+
+    </section>
+  </main>
+</body>
+</html>
