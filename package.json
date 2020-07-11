@@ -1,16 +1,17 @@
 {
   "name": "accessible-web-components",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.0",
   "description": "A collection of accessible web components",
   "main": "index.js",
   "lint-staged": {
     "*.js": [
       "eslint --fix",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "scripts": {
+    "lerna:version": "npx lerna version --conventional-commits --conventional-prerelease=tabs",
+    "lerna:publish": "npx lerna publish",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint --ext .js,.html .",
     "format": "npm run format:eslint && npm run format:prettier",
