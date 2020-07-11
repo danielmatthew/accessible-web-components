@@ -2,7 +2,7 @@
   "name": "dropdown",
   "version": "1.0.0-alpha.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "start": "es-dev-server --app-index index.html --node-resolve --watch --open",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,6 +15,7 @@
     "lit-html": "^1.2.1"
   },
   "devDependencies": {
-    "es-dev-server": "^1.56.0"
+    "es-dev-server": "^1.56.0",
+    "semantic-release": "^17.1.1"
   }
 }
