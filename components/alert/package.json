@@ -15,6 +15,7 @@
     "lit-html": "^1.2.1"
   },
   "devDependencies": {
-    "es-dev-server": "^1.56.0"
+    "es-dev-server": "^1.56.0",
+    "semantic-release": "^17.1.1"
   }
 }
