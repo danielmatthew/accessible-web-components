@@ -6,7 +6,7 @@
   "main": "index.js",
   "module": "index.js",
   "scripts": {
-    "start": "es-dev-server --app-index index.html --node-resolve --watch --open",
+    "start": "es-dev-server --app-index demo/index.html --node-resolve --watch --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
