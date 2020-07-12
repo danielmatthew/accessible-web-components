@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.0-alpha.2 (2020-07-12)
+
+* fix(tabs): use correct naming scheme ([0cbf049](https://github.com/danielmatthew/accessible-web-components/commit/0cbf049))
+* chore: add npm-run-all ([51c0ff4](https://github.com/danielmatthew/accessible-web-components/commit/51c0ff4))
+
+
+
+
+
 ## 0.0.0-alpha.1 (2020-07-12)
 
 * chore: update privacy and versions ([cde0868](https://github.com/danielmatthew/accessible-web-components/commit/cde0868))

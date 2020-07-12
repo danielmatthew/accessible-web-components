@@ -1,6 +1,6 @@
 {
   "name": "@accessible-web-components/tabs",
-  "version": "0.0.0-alpha.1",
+  "version": "0.0.0-alpha.2",
   "description": "https://www.w3.org/TR/wai-aria-practices-1.2/#tabpanel",
   "type": "module",
   "main": "index.js",
