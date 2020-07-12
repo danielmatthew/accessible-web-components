@@ -13,10 +13,10 @@ https://www.w3.org/TR/wai-aria-practices-1.2/#tabpanel
 
 #### Notes
 - TODO: It is recommended that tabs activate automatically when they receive focus as long as their associated tab panels are displayed without noticeable latency.
-- TODO: If `aria-orientation=horizontal`, tablist does not listen for down/up to allow for normal browser scrolling
+- TODO: #18 If `aria-orientation=horizontal`, tablist does not listen for down/up to allow for normal browser scrolling
 
 ### Roles
 - Container = `tablist`
 - Each element has a role `tab` and contained within `tablist`
 - Panel has role = `tabpanel`
-- TODO: tablist should be labelledby active tab
+- TODO: #19 tablist should be labelledby active tab
