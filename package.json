@@ -10,7 +10,8 @@
     ]
   },
   "scripts": {
-    "lerna:version": "npx lerna version --conventional-commits --conventional-prerelease=tabs",
+    "bootstrap": "npx lerna bootstrap --hoist",
+    "lerna:version": "npx lerna version --conventional-commits --conventional-prerelease=@accessible-web-components/tabs",
     "lerna:publish": "npx lerna publish",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint --ext .js,.html .",
