@@ -11,10 +11,9 @@
   },
   "scripts": {
     "bootstrap": "npx lerna bootstrap --hoist",
-    "lerna:version": "npx lerna version --conventional-commits --conventional-prerelease=@accessible-web-components/tabs",
     "publish:lerna": "npx lerna publish --no-push",
     "publish:dry-run": "run-s \"publish:version --no-git-tag-version\"",
-    "publish:version": "npx lerna version --no-push",
+    "publish:version": "npx lerna version --no-push --no-private --conventional-commits --conventional-prerelease",
     "publish:prepare": "run-s bootstrap test",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint --ext .js,.html .",

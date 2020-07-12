@@ -2,16 +2,20 @@
   "command": {
     "publish": {
       "ignoreChanges": ["*.md"],
-      "message": "chore(release): publish %s"
+      "message": "chore(release): publish"
     },
     "version": {
       "allowBranch": "master",
       "conventionalCommits": true
     }
   },
+  "ignoreChanges": [
+    "**/*.md"
+  ],
   "version": "independent",
   "packages": ["components/*"],
   "changelogPreset": {
     "name": "conventionalcommits"
-  }
+  },
+  "lerna": "3.22.1"
 }
