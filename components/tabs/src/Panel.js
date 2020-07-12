@@ -1,15 +1,15 @@
-let dmPanelCounter = 0;
+let panelCounter = 0;
 
 export class AwcPanel extends HTMLElement {
-  // constructor() {
-  //   super();
-  // }
+  constructor() {
+    super();
+  }
 
   connectedCallback() {
     this.setAttribute('role', 'tabpanel');
 
     if (!this.id) {
-      this.id = `dm-panel-generated-${dmPanelCounter += 1}`;
+      this.id = `awc-panel-generated-${panelCounter += 1}`;
     }
   }
 }

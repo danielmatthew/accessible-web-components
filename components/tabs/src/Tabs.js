@@ -31,7 +31,7 @@ export class AwcTabs extends LitElement {
         flex-wrap: wrap;
       }
 
-      ::slotted(dm-panel) {
+      ::slotted(awc-panel) {
         flex-basis: 100%;
       }
     `;
@@ -55,11 +55,6 @@ export class AwcTabs extends LitElement {
     if (!this.hasAttribute('role')) {
       this.setAttribute('role', 'tablist');
     }
-
-    // Promise.all([
-    //   customElements.whenDefined("dm-tab"),
-    //   customElements.whenDefined("dm-panel")
-    // ]).then(_ => this._linkPanels());
   }
 
   /**
@@ -83,7 +78,7 @@ export class AwcTabs extends LitElement {
 
     tabs.forEach(tab => {
       const panel = tab.nextElementSibling;
-      if (panel.tagName.toLowerCase() !== 'dm-panel') {
+      if (panel.tagName.toLowerCase() !== 'awc-panel') {
         return;
       }
 
@@ -99,14 +94,14 @@ export class AwcTabs extends LitElement {
    * @returns { Array } All panels
    */
   _allPanels() {
-    return Array.from(this.querySelectorAll('dm-panel'));
+    return Array.from(this.querySelectorAll('awc-panel'));
   }
 
   /**
    * @returns { Array } All tabs
    */
   _allTabs() {
-    return Array.from(this.querySelectorAll('dm-tab'));
+    return Array.from(this.querySelectorAll('awc-tab'));
   }
 
   /**

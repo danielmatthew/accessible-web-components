@@ -15,7 +15,7 @@ export class AwcTab extends HTMLElement {
     this.setAttribute('role', 'tab');
 
     if (!this.id) {
-      this.id = `dm-tab-generated-${tabCounter += 1}`;
+      this.id = `awc-tab-generated-${tabCounter += 1}`;
     }
 
     this.setAttribute('aria-selected', 'false');

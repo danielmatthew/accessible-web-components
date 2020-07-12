@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-GB">
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Tabs | Accessible Web Components</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <script type="module" src="index.js" async></script>
+    <script type="module" src="../awc-tabs.js" async></script>
   </head>
   <body>
     <style>
@@ -14,23 +14,23 @@
         margin: auto;
       }
 
-      dm-tab {
+      awc-tab {
         border: 1px solid black;
         padding: 20px;
       }
 
-      dm-panel {
+      awc-panel {
         padding: 20px;
         background-color: lightgoldenrodyellow;
       }
 
-      dm-tab[selected] {
+      awc-tab[selected] {
         background-color: goldenrod;
       }
 
-      dm-panel:not(:defined),
-      dm-tab:not(:defined),
-      dm-tabs:not(:defined) {
+      awc-panel:not(:defined),
+      awc-tab:not(:defined),
+      awc-tabs:not(:defined) {
         display: block;
       }
     </style>
@@ -40,9 +40,9 @@
 
       <section>
         <h2>Example</h2>
-        <dm-tabs>
-          <dm-tab role="heading" slot="tab">Tab 1</dm-tab>
-          <dm-panel role="region" slot="panel">
+        <awc-tabs>
+          <awc-tab role="heading" slot="tab">Tab 1</awc-tab>
+          <awc-panel role="region" slot="panel">
             <h2>My first tab</h2>
             <p>Here is some text…</p>
             <ul>
@@ -50,19 +50,14 @@
             </ul>
 
             <button type="button">I am a focusable element within the tab</button>
-          </dm-panel>
-        <dm-tab role="heading" slot="tab">Tab 2</dm-tab>
-        <dm-panel role="region" slot="panel">Content 2</dm-panel>
-        <dm-tab role="heading" slot="tab">Tab 3</dm-tab>
-        <dm-panel role="region" slot="panel">Content 3</dm-panel>
-        <dm-tab role="heading" slot="tab">Tab 4</dm-tab>
-        <dm-panel role="region" slot="panel">Content 4</dm-panel>
-      </dm-tabs>
-    </section>
-
-    <section>
-      <h2>Usage</h2>
-
+          </awc-panel>
+        <awc-tab role="heading" slot="tab">Tab 2</awc-tab>
+        <awc-panel role="region" slot="panel">Content 2</awc-panel>
+        <awc-tab role="heading" slot="tab">Tab 3</awc-tab>
+        <awc-panel role="region" slot="panel">Content 3</awc-panel>
+        <awc-tab role="heading" slot="tab">Tab 4</awc-tab>
+        <awc-panel role="region" slot="panel">Content 4</awc-panel>
+      </awc-tabs>
     </section>
   </main>
 </body>
