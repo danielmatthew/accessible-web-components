@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.0-alpha.3 (2020-07-12)
+
+* chore(tabs): add publishConfig ([b13a07c](https://github.com/danielmatthew/accessible-web-components/commit/b13a07c))
+
+
+
+
+
 ## 0.0.0-alpha.2 (2020-07-12)
 
 * fix(tabs): use correct naming scheme ([0cbf049](https://github.com/danielmatthew/accessible-web-components/commit/0cbf049))
