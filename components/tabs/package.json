@@ -9,7 +9,7 @@
     "start": "es-dev-server --app-index demo/index.html --node-resolve --watch --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["web components", "lit-element", "accessibility"],
   "author": "Dan Matthew",
   "license": "MIT",
   "dependencies": {
