@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.0-alpha.4 (2020-07-14)
+
+* chore(deps): bump npm from 6.14.5 to 6.14.6 in /components/tabs (#15) ([625257a](https://github.com/danielmatthew/accessible-web-components/commit/625257a)), closes [#15](https://github.com/danielmatthew/accessible-web-components/issues/15)
+* chore(tabs): add usage instructions to readme ([1dcabc7](https://github.com/danielmatthew/accessible-web-components/commit/1dcabc7))
+* chore(tabs): convert todos into issues ([1bc4ef7](https://github.com/danielmatthew/accessible-web-components/commit/1bc4ef7))
+
+
+
+
+
 ## 0.0.0-alpha.3 (2020-07-12)
 
 * chore(tabs): add publishConfig ([b13a07c](https://github.com/danielmatthew/accessible-web-components/commit/b13a07c))
