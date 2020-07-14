@@ -4,10 +4,12 @@
 
 ---
 
-A series of web components covering the widgets listed by the [WAI-ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices/#aria_ex).
+A series of [LitElement](https://lit-element.polymer-project.org/)-powered web components, covering widgets described by the [WAI-ARIA Authoring Practices 1.1](https://www.w3.org/TR/wai-aria-practices/).
 
-Written with [LitElement](https://lit-element.polymer-project.org/)
+A "Working Group Note" is deemed a work in progress:
 
-Published under the `[@accessible-web-components](https://www.npmjs.com/settings/accessible-web-components/packages)` org
+> Publication as a Working Group Note does not imply endorsement by the W3C Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.
+
+Published under the [@accessible-web-components](https://www.npmjs.com/settings/accessible-web-components/packages) org
 
 - [x] [Tabs](/components/tabs)
