@@ -1,11 +1,13 @@
 {
   "command": {
     "publish": {
+      "allowBranch": "main",
       "ignoreChanges": ["*.md"],
-      "message": "chore(release): publish"
+      "message": "chore(release): publish",
+      "conventionalCommits": true
     },
     "version": {
-      "allowBranch": "master",
+      "allowBranch": "main",
       "conventionalCommits": true
     }
   },

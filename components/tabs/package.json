@@ -1,7 +1,7 @@
 {
   "name": "@accessible-web-components/tabs",
   "version": "0.0.0-alpha.4",
-  "description": "https://www.w3.org/TR/wai-aria-practices-1.2/#tabpanel",
+  "description": "An accessible tabs web component",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
@@ -11,7 +11,7 @@
   },
   "keywords": [],
   "author": "Dan Matthew",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "lit-element": "^2.3.1",
     "lit-html": "^1.2.1"
