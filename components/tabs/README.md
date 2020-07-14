@@ -1,5 +1,7 @@
 # Tabs
 
+[![Published on npm](https://img.shields.io/npm/v/@accessible-web-components/tabs.svg)](https://www.npmjs.com/package/@accessible-web-components/tabs)
+
 ## Demo
 https://v505e.csb.app/
 
