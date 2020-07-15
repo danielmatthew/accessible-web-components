@@ -11,7 +11,7 @@
   },
   "scripts": {
     "bootstrap": "npx lerna bootstrap --hoist",
-    "publish:lerna": "npx lerna publish --no-push",
+    "publish:lerna": "npx lerna publish --no-push --no-private --conventional-commits --conventional-prerelease",
     "publish:dry-run": "run-s \"publish:version --no-git-tag-version\"",
     "publish:version": "npx lerna version --no-push --no-private --conventional-commits --conventional-prerelease",
     "publish:prepare": "run-s bootstrap test",
