@@ -36,9 +36,11 @@ window.customElements.define('awc-panel', AwcPanel);
 </awc-tabs>
 ```
 
+- The roles of `heading` and `region` are replaced by `tab` and `tabpanel` respectively at runtime.
+
 ## Requirements
 
-As defined at https://www.w3.org/TR/wai-aria-practices-1.2/#tabpanel
+Per https://www.w3.org/TR/wai-aria-practices-1.2/#tabpanel:
 
 ### Keyboard
 - Focus on active tab element
@@ -47,9 +49,6 @@ As defined at https://www.w3.org/TR/wai-aria-practices-1.2/#tabpanel
 - Space/Enter: activate
 - Home: first
 - End: last
-
-#### Notes
-- TODO: #18 If `aria-orientation=horizontal`, tablist does not listen for down/up to allow for normal browser scrolling
 
 ### Roles
 - Container = `tablist`

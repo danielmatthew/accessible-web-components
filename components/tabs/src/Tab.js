@@ -1,6 +1,3 @@
-let tabCounter = 0;
-
-/* eslint-disable no-useless-constructor */
 export class AwcTab extends HTMLElement {
   static get observedAttributes() {
     return ['selected'];
@@ -8,6 +5,8 @@ export class AwcTab extends HTMLElement {
 
   constructor() {
     super();
+
+    this.tabCounter = 0;
   }
 
   connectedCallback() {
@@ -15,7 +14,7 @@ export class AwcTab extends HTMLElement {
     this.setAttribute('role', 'tab');
 
     if (!this.id) {
-      this.id = `awc-tab-generated-${tabCounter += 1}`;
+      this.id = `awc-tab-generated-${this.tabCounter += 1}`;
     }
 
     this.setAttribute('aria-selected', 'false');

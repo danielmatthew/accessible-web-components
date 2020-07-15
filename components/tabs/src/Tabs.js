@@ -62,6 +62,7 @@ export class AwcTabs extends LitElement {
    */
   disconnectedCallback() {
     super.disconnectedCallback();
+
     this.removeEventListener('keydown', this._onKeyDown);
     this.removeEventListener('click', this._onClick);
   }
@@ -170,14 +171,15 @@ export class AwcTabs extends LitElement {
     }
 
     let newTab;
+
     switch (event.keyCode) {
       case KEYCODE.LEFT:
-      case KEYCODE.UP:
+      // case KEYCODE.UP:
         newTab = this._prevTab();
         break;
 
       case KEYCODE.RIGHT:
-      case KEYCODE.DOWN:
+      // case KEYCODE.DOWN:
         newTab = this._nextTab();
         break;
 
