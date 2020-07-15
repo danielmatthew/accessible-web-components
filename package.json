@@ -19,8 +19,9 @@
     "lint:eslint": "eslint --ext .js,.html .",
     "format": "npm run format:eslint && npm run format:prettier",
     "format:eslint": "eslint --ext .js,.html . --fix",
-    "start": "owc-dev-server --open components/tabs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "es-dev-server --open components/tabs",
+    "test": "npx lerna run --scope @accessible-web-components/tabs test",
+    "test:watch": "npx karma start --auto-watch=true --single-run=false"
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +53,10 @@
     "lint-staged": "^10.2.11",
     "lit-element": "^2.3.1",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "semantic-release": "^17.1.1",
+    "@open-wc/testing-karma": "^3.0.0",
+    "deepmerge": "^3.2.0",
+    "@open-wc/testing": "^2.0.0"
   }
 }
