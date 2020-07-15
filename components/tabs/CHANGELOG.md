@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.0-alpha.5 (2020-07-15)
+
+* fix(tabs): remove UP/DOWN handling ([214ac42](https://github.com/danielmatthew/accessible-web-components/commit/214ac42)), closes [#18](https://github.com/danielmatthew/accessible-web-components/issues/18)
+* chore: use `main` branch ([e11c483](https://github.com/danielmatthew/accessible-web-components/commit/e11c483))
+* chore(tabs): add badge to readme ([ff5c9c3](https://github.com/danielmatthew/accessible-web-components/commit/ff5c9c3))
+* chore(tabs): update keywords ([0827f4d](https://github.com/danielmatthew/accessible-web-components/commit/0827f4d))
+
+
+
+
+
 ## 0.0.0-alpha.4 (2020-07-14)
 
 * chore(deps): bump npm from 6.14.5 to 6.14.6 in /components/tabs (#15) ([625257a](https://github.com/danielmatthew/accessible-web-components/commit/625257a)), closes [#15](https://github.com/danielmatthew/accessible-web-components/issues/15)

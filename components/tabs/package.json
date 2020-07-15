@@ -1,6 +1,6 @@
 {
   "name": "@accessible-web-components/tabs",
-  "version": "0.0.0-alpha.4",
+  "version": "0.0.0-alpha.5",
   "description": "An accessible tabs web component",
   "type": "module",
   "main": "index.js",
@@ -9,7 +9,11 @@
     "start": "es-dev-server --app-index demo/index.html --node-resolve --watch --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["web components", "lit-element", "accessibility"],
+  "keywords": [
+    "web components",
+    "lit-element",
+    "accessibility"
+  ],
   "author": "Dan Matthew",
   "license": "MIT",
   "dependencies": {
