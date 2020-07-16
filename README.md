@@ -6,10 +6,10 @@
 
 A series of [LitElement](https://lit-element.polymer-project.org/)-powered web components, covering widgets described by the [WAI-ARIA Authoring Practices 1.1](https://www.w3.org/TR/wai-aria-practices/).
 
-A "Working Group Note" is deemed a work in progress:
+- [x] [Tabs - @accessible-web-components/tabs](/components/tabs) 
 
-> Publication as a Working Group Note does not imply endorsement by the W3C Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.
+---
 
-Published under the [@accessible-web-components](https://www.npmjs.com/settings/accessible-web-components/packages) org
+Per [warning by Adrian Roselli](https://adrianroselli.com/2020/07/aria-grid-as-an-anti-pattern.html#Layout):
 
-- [x] [Tabs](/components/tabs)
+> I need to take this opportunity to stress that the ARIA Authoring Practices are not a specification nor standard. They are a [Working Group Note](https://www.w3.org/2018/Process-20180201/#WGNote). They are [not production ready](https://www.w3.org/TR/wai-aria-practices-1.1/#browser_and_AT_support) …
