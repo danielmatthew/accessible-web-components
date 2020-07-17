@@ -2,13 +2,15 @@ import { fixture, html, expect, elementUpdated } from '@open-wc/testing';
 import '../awc-tabs.js';
 
 describe('awc-tabs', () => {
-  it('passes accessibility test', async () => {
-    const el = await fixture(html`
-      <awc-tabs>
-        <awc-tab role="heading" slot="tab"></awc-tab>
-        <awc-panel role="region" slot="panel"></awc-panel>
-      </awc-tabs>
-    `);
+  const markup = html`
+    <awc-tabs>
+      <awc-tab role="heading" slot="tab"></awc-tab>
+      <awc-panel role="region" slot="panel"></awc-panel>
+    </awc-tabs>
+  `;
+
+  it('should initialise its markup correctly', async () => {
+    const el = await fixture(markup);
 
     await elementUpdated(el);
 
@@ -39,5 +41,13 @@ describe('awc-tabs', () => {
       <slot name="tab"></slot>
       <slot name="panel"></slot>
     `);
+  });
+
+  it('should pass an automated accessibility test', async () => {
+    const el = await fixture(markup);
+
+    await elementUpdated(el);
+
+    expect(el).to.be.accessible();
   });
 });
