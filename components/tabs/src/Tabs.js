@@ -40,7 +40,8 @@ export class AwcTabs extends LitElement {
   render() {
     return html`
     <slot name="tab"></slot>
-    <slot name="panel"></slot>`;
+    <slot name="panel"></slot>
+    `;
   }
 
   /**
@@ -79,6 +80,7 @@ export class AwcTabs extends LitElement {
 
     tabs.forEach(tab => {
       const panel = tab.nextElementSibling;
+
       if (panel.tagName.toLowerCase() !== 'awc-panel') {
         return;
       }
@@ -107,7 +109,7 @@ export class AwcTabs extends LitElement {
 
   /**
    * @param {*} tab
-   * @returns { HTMLElement } The panel that has given tab controls
+   * @returns { HTMLElement } Panel element controlled by the tab
    */
   _panelForTab(tab) {
     const panelId = tab.getAttribute('aria-controls');
@@ -143,8 +145,21 @@ export class AwcTabs extends LitElement {
     const tabs = this._allTabs();
     const panels = this._allPanels();
 
-    tabs.forEach(tab => (tab.selected = false));
-    panels.forEach(panel => (panel.hidden = true));
+    tabs.forEach((tab) => {
+      const currentTab = tab;
+
+      currentTab.selected = false;
+
+      return currentTab;
+    });
+
+    panels.forEach((panel) => {
+      const currentPanel = panel;
+
+      currentPanel.hidden = true;
+
+      return currentPanel;
+    });
   }
 
   _selectTab(newTab) {
