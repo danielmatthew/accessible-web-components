@@ -1,6 +1,5 @@
 {
   "name": "accessible-web-components",
-  "version": "1.0.0-alpha.0",
   "description": "A collection of accessible web components",
   "main": "index.js",
   "lint-staged": {
