@@ -5,6 +5,16 @@
 ## Demo
 https://v505e.csb.app/
 
+## Browser Support
+
+| Browser | Assistive Technolog |
+| --- | --- |
+|: macOS :||
+| Safari 13.0.4 ✅ | VoiceOver ✅|
+| Firefox 79 ✅ ||
+| Chrome ✅ ||
+| Edge ✅ ||
+
 ## Usage
 
 ```js
@@ -17,8 +27,8 @@ window.customElements.define('awc-panel', AwcPanel);
 
 ```html
 <awc-tabs>
-  <awc-tab role="heading" slot="tab">Tab 1</awc-tab>
-  <awc-panel role="region" slot="panel">
+  <awc-tab role="heading" slot="tab" id="my-first-tab" >Tab 1</awc-tab>
+  <awc-panel role="region" slot="panel" id="my-first-panel">
     <h2>My first tab</h2>
     <p>Here is some text…</p>
     <ul>
@@ -51,7 +61,7 @@ Per https://www.w3.org/TR/wai-aria-practices-1.2/#tabpanel:
 - End: last
 
 ### Roles
-- Container = `tablist`
-- Each element has a role `tab` and contained within `tablist`
-- Panel has role = `tabpanel`
-- TODO: #19 tablist should be `labelledby` active tab
+- Container has a role of `tablist`
+- tablist should be `labelledby` active tab
+- Each element representing a tab has the role `tab` and is contained within the `tablist`
+- Each element representing tab content has the role of `tabpanel`

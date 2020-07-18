@@ -39,8 +39,8 @@ export class AwcTabs extends LitElement {
 
   render() {
     return html`
-    <slot name="tab"></slot>
-    <slot name="panel"></slot>
+      <slot name="tab"></slot>
+      <slot name="panel"></slot>
     `;
   }
 
@@ -145,7 +145,7 @@ export class AwcTabs extends LitElement {
     const tabs = this._allTabs();
     const panels = this._allPanels();
 
-    tabs.forEach((tab) => {
+    tabs.forEach(tab => {
       const currentTab = tab;
 
       currentTab.selected = false;
@@ -153,7 +153,7 @@ export class AwcTabs extends LitElement {
       return currentTab;
     });
 
-    panels.forEach((panel) => {
+    panels.forEach(panel => {
       const currentPanel = panel;
 
       currentPanel.hidden = true;
@@ -163,17 +163,21 @@ export class AwcTabs extends LitElement {
   }
 
   _selectTab(newTab) {
+    const selectedTab = newTab;
+
     this.reset();
 
-    const newPanel = this._panelForTab(newTab);
+    const newPanel = this._panelForTab(selectedTab);
 
     if (!newPanel) {
-      throw new Error(`No panel with id ${newPanelId}`);
+      throw new Error(`No panel with id ${selectedTab.id}`);
     }
 
-    newTab.selected = true;
+    selectedTab.selected = true;
     newPanel.hidden = false;
-    newTab.focus();
+    selectedTab.focus();
+
+    this.setAttribute('aria-labelledby', selectedTab.id);
   }
 
   _onKeyDown(event) {
@@ -189,12 +193,12 @@ export class AwcTabs extends LitElement {
 
     switch (event.keyCode) {
       case KEYCODE.LEFT:
-      // case KEYCODE.UP:
+        // case KEYCODE.UP:
         newTab = this._prevTab();
         break;
 
       case KEYCODE.RIGHT:
-      // case KEYCODE.DOWN:
+        // case KEYCODE.DOWN:
         newTab = this._nextTab();
         break;
 
@@ -222,4 +226,3 @@ export class AwcTabs extends LitElement {
     this._selectTab(event.target);
   }
 }
-
