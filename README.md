@@ -1,12 +1,13 @@
 # accessible-web-components
 
+[![danielmatthew](https://circleci.com/gh/danielmatthew/accessible-web-components.svg?style=svg)](https://circleci.com/gh/danielmatthew/accessible-web-components)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
 ---
 
 A series of [LitElement](https://lit-element.polymer-project.org/)-powered web components, covering widgets described by the [WAI-ARIA Authoring Practices 1.1](https://www.w3.org/TR/wai-aria-practices/).
 
-- [x] [Tabs - @accessible-web-components/tabs](/components/tabs) 
+- [x] [Tabs - @accessible-web-components/tabs](/components/tabs)
 
 ---
 
