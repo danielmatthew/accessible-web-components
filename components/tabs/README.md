@@ -36,7 +36,7 @@ window.customElements.define('awc-panel', AwcPanel);
 </awc-tabs>
 ```
 
-- The roles of `heading` and `region` are replaced by `tab` and `tabpanel` respectively at runtime.
+- The roles of `heading` and `region` are replaced by `tab` and `tabpanel` respectively at runtime. They provide some level of redundancy to the new elements should there be a runtime error.
 
 ## Requirements
 

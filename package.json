@@ -18,7 +18,7 @@
     "lint:eslint": "eslint --ext .js,.html .",
     "format": "npm run format:eslint && npm run format:prettier",
     "format:eslint": "eslint --ext .js,.html . --fix",
-    "start": "es-dev-server --open components/tabs",
+    "start": "es-dev-server --open components/tabs/demo/index.html --node-resolve --watch --app-index --preserve-symlinks",
     "test": "npx lerna run --scope @accessible-web-components/tabs test",
     "test:watch": "npx karma start --auto-watch=true --single-run=false"
   },

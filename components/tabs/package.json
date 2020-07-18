@@ -6,7 +6,7 @@
   "main": "index.js",
   "module": "index.js",
   "scripts": {
-    "start": "es-dev-server --app-index demo/index.html --node-resolve --watch --open",
+    "start": "es-dev-server --app-index demo/index.html --node-resolve --watch --open --preserve-symlinks",
     "test": "npx karma start ../../karma.conf.cjs",
     "test:watch": "npx karma start ../../karma.conf.cjs --auto-watch=true --single-run=false"
   },
