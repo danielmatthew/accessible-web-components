@@ -1,6 +1,6 @@
 {
   "name": "@accessible-web-components/tabs",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "An accessible tabs web component",
   "type": "module",
   "main": "index.js",
@@ -22,11 +22,11 @@
     "lit-html": "^1.2.1"
   },
   "devDependencies": {
-    "es-dev-server": "^1.56.0",
-    "semantic-release": "^17.1.1",
+    "@open-wc/testing": "^2.0.0",
     "@open-wc/testing-karma": "^3.0.0",
     "deepmerge": "^3.2.0",
-    "@open-wc/testing": "^2.0.0"
+    "es-dev-server": "^1.56.0",
+    "semantic-release": "^17.1.1"
   },
   "repository": {
     "type": "git",

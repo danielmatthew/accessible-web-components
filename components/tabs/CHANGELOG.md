@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.1.6 (2020-07-18)</small>
+
+* fix(tabs): revert changes to panel/tab counters ([253453c](https://github.com/danielmatthew/accessible-web-components/commit/253453c))
+* fix(tabs): tablist is labelled by selected tab ([c2d2a3b](https://github.com/danielmatthew/accessible-web-components/commit/c2d2a3b))
+* chore: sort versioning ([797cb75](https://github.com/danielmatthew/accessible-web-components/commit/797cb75))
+* chore(deps): bump lodash from 4.17.15 to 4.17.19 (#20) ([a87efb8](https://github.com/danielmatthew/accessible-web-components/commit/a87efb8)), closes [#20](https://github.com/danielmatthew/accessible-web-components/issues/20)
+* chore(tabs): add test coverage (#22) ([ad9e297](https://github.com/danielmatthew/accessible-web-components/commit/ad9e297)), closes [#22](https://github.com/danielmatthew/accessible-web-components/issues/22)
+* chore(tabs): update es-dev-server script ([f314cca](https://github.com/danielmatthew/accessible-web-components/commit/f314cca))
+
+
+
+
+
 ## 0.0.0-alpha.5 (2020-07-15)
 
 * fix(tabs): remove UP/DOWN handling ([214ac42](https://github.com/danielmatthew/accessible-web-components/commit/214ac42)), closes [#18](https://github.com/danielmatthew/accessible-web-components/issues/18)
