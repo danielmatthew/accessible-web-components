@@ -5,6 +5,8 @@ jobs:
   build-and-test:
     executor:
       name: node/default
+    docker:
+      - image: circleci/node:latest-browsers
     steps:
       - checkout
       - node/with-cache:
