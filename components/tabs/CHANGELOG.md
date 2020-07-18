@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.1.7 (2020-07-18)</small>
+
+* chore(tabs): fix test ([f731074](https://github.com/danielmatthew/accessible-web-components/commit/f731074))
+
+
+
+
+
 ## <small>0.1.6 (2020-07-18)</small>
 
 * fix(tabs): revert changes to panel/tab counters ([253453c](https://github.com/danielmatthew/accessible-web-components/commit/253453c))
