@@ -15,7 +15,7 @@ describe('awc-tabs', () => {
     await elementUpdated(el);
 
     expect(el).dom.to.equal(`
-      <awc-tabs role="tablist">
+      <awc-tabs role="tablist" aria-labelledby="awc-tab-generated-1">
         <awc-tab
           aria-controls="awc-panel-generated-1"
           id="awc-tab-generated-1"

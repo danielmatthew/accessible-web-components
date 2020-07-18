@@ -7,13 +7,13 @@ https://v505e.csb.app/
 
 ## Browser Support
 
-| Browser | Assistive Technolog |
+| Browser | Assistive Technology |
 | --- | --- |
-|: macOS :||
-| Safari 13.0.4 ✅ | VoiceOver ✅|
-| Firefox 79 ✅ ||
-| Chrome ✅ ||
-| Edge ✅ ||
+|: macOS :| |
+| Safari 13.0.4 ✅ :| VoiceOver ✅|
+| Firefox 79 ✅ :| |
+| Chrome ✅ :| |
+| Edge ✅ :| |
 
 ## Usage
 
