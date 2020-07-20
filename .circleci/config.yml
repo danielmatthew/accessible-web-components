@@ -15,8 +15,6 @@ jobs:
             - run: npm test
 
   release:
-    branches:
-      only: main
     docker:
       - image: circleci/node
     steps:
@@ -31,6 +29,9 @@ workflows:
       jobs:
         - build-and-test
         - release:
+            filters:
+              branches:
+                only: main
             requires:
               - build-and-test
 
