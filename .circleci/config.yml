@@ -13,7 +13,24 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
+
+  release:
+    branches:
+      only: main
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: npm install
+            - run: npx lerna version --no-private --conventional-commits --create-release github
+
 workflows:
     build-and-test:
       jobs:
         - build-and-test
+        - release:
+            requires:
+              - build-and-test
+
