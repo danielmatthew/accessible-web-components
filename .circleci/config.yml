@@ -23,7 +23,7 @@ jobs:
       - node/with-cache:
           steps:
             - run: npx lerna bootstrap --hoist --ci
-            - run: npx lerna version --no-private --conventional-commits --create-release github
+            - run: npx lerna version --no-private --conventional-commits --create-release github --yes
 
 workflows:
     build-and-test:
