@@ -10,10 +10,20 @@ const KEYCODE = {
 };
 
 export class AwcTabs extends LitElement {
+  static get properties() {
+    return {
+      vertical: {
+        type: Boolean,
+      },
+    };
+  }
+
   constructor() {
     super();
 
     this._onSlotChange = this._onSlotChange.bind(this);
+
+    this.vertical = false;
   }
 
   firstUpdated() {
@@ -22,6 +32,10 @@ export class AwcTabs extends LitElement {
 
     this._tabSlot.addEventListener('slotchange', this._onSlotChange);
     this._panelSlot.addEventListener('slotchange', this._onSlotChange);
+  }
+
+  attributeChangedCallback(name, oldVal, newVal) {
+    super.attributeChangedCallback(name, oldVal, newVal);
   }
 
   static get styles() {
@@ -55,6 +69,12 @@ export class AwcTabs extends LitElement {
 
     if (!this.hasAttribute('role')) {
       this.setAttribute('role', 'tablist');
+    }
+
+    if (this.vertical) {
+      this.setAttribute('aria-orientation', 'vertical');
+    } else {
+      this.setAttribute('aria-orientation', 'horizontal');
     }
   }
 
@@ -191,27 +211,50 @@ export class AwcTabs extends LitElement {
 
     let newTab;
 
-    switch (event.keyCode) {
-      case KEYCODE.LEFT:
-        // case KEYCODE.UP:
-        newTab = this._prevTab();
-        break;
+    if (this.vertical) {
+      switch (event.keyCode) {
+        case KEYCODE.LEFT:
+        case KEYCODE.UP:
+          newTab = this._prevTab();
+          break;
 
-      case KEYCODE.RIGHT:
-        // case KEYCODE.DOWN:
-        newTab = this._nextTab();
-        break;
+        case KEYCODE.RIGHT:
+        case KEYCODE.DOWN:
+          newTab = this._nextTab();
+          break;
 
-      case KEYCODE.HOME:
-        newTab = this._firstTab();
-        break;
+        case KEYCODE.HOME:
+          newTab = this._firstTab();
+          break;
 
-      case KEYCODE.END:
-        newTab = this._lastTab();
-        break;
+        case KEYCODE.END:
+          newTab = this._lastTab();
+          break;
 
-      default:
-        return;
+        default:
+          return;
+      }
+    } else {
+      switch (event.keyCode) {
+        case KEYCODE.LEFT:
+          newTab = this._prevTab();
+          break;
+
+        case KEYCODE.RIGHT:
+          newTab = this._nextTab();
+          break;
+
+        case KEYCODE.HOME:
+          newTab = this._firstTab();
+          break;
+
+        case KEYCODE.END:
+          newTab = this._lastTab();
+          break;
+
+        default:
+          return;
+      }
     }
 
     event.preventDefault();
