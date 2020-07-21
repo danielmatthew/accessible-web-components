@@ -15,7 +15,7 @@ describe('awc-tabs', () => {
     await elementUpdated(el);
 
     expect(el).dom.to.equal(`
-      <awc-tabs role="tablist" aria-labelledby="awc-tab-generated-1">
+      <awc-tabs role="tablist" aria-labelledby="awc-tab-generated-1" aria-orientation="horizontal">
         <awc-tab
           aria-controls="awc-panel-generated-1"
           id="awc-tab-generated-1"
@@ -49,5 +49,52 @@ describe('awc-tabs', () => {
     await elementUpdated(el);
 
     expect(el).to.be.accessible();
+  });
+
+  describe('aria-orientation', () => {
+    const noOrientationMarkup = html`
+      <awc-tabs>
+        <awc-tab role="heading" slot="tab"></awc-tab>
+        <awc-panel role="region" slot="panel"></awc-panel>
+      </awc-tabs>
+    `;
+
+    const horizontalOrientationMarkup = html`
+      <awc-tabs aria-orientation="horizontal">
+        <awc-tab role="heading" slot="tab"></awc-tab>
+        <awc-panel role="region" slot="panel"></awc-panel>
+      </awc-tabs>
+    `;
+
+    const verticalOrientationMarkup = html`
+      <awc-tabs vertical>
+        <awc-tab role="heading" slot="tab"></awc-tab>
+        <awc-panel role="region" slot="panel"></awc-panel>
+      </awc-tabs>
+    `;
+
+    it('should be horizontal if attribute omitted', async () => {
+      const el = await fixture(noOrientationMarkup);
+
+      await elementUpdated(el);
+
+      expect(el.getAttribute('aria-orientation')).to.equal('horizontal');
+    });
+
+    it('should be horizontal if attribute explicitly applied', async () => {
+      const el = await fixture(horizontalOrientationMarkup);
+
+      await elementUpdated(el);
+
+      expect(el.getAttribute('aria-orientation')).to.equal('horizontal');
+    });
+
+    it('should report vertical if attribute is applied', async () => {
+      const el = await fixture(verticalOrientationMarkup);
+
+      await elementUpdated(el);
+
+      expect(el.getAttribute('aria-orientation')).to.equal('vertical');
+    });
   });
 });
