@@ -1,6 +1,6 @@
 {
   "name": "@accessible-web-components/tabs",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "An accessible tabs web component",
   "type": "module",
   "main": "index.js",
