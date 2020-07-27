@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.2.1 (2020-07-27)</small>
+
+* docs: update tabs readme and demo ([9e61ae3](https://github.com/danielmatthew/accessible-web-components/commit/9e61ae3))
+
+
+
+
+
 ## 0.2.0 (2020-07-22)
 
 * feat(tabs): add support for orientation (#24) ([3965132](https://github.com/danielmatthew/accessible-web-components/commit/3965132)), closes [#24](https://github.com/danielmatthew/accessible-web-components/issues/24)
