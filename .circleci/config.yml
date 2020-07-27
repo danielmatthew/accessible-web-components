@@ -18,6 +18,7 @@ jobs:
   release:
     docker:
       - image: circleci/node
+    resource_class: small
     steps:
       - checkout
       - node/with-cache:
