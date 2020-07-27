@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Tabs | Accessible Web Components</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <script type="module" src="../awc-tabs.js" async></script>
+
+    <!-- Optional polyfill for older browsers… -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.4.4/webcomponents-loader.js"></script>
+
+    <!-- Script imports and defines custom elements -->
+    <script type="module" src="../awc-tabs.js"></script>
   </head>
   <body>
     <style>
