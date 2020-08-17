@@ -25,8 +25,7 @@
     "@open-wc/testing": "^2.0.0",
     "@open-wc/testing-karma": "^3.0.0",
     "deepmerge": "^3.2.0",
-    "es-dev-server": "^1.56.0",
-    "semantic-release": "^17.1.1"
+    "es-dev-server": "^1.56.0"
   },
   "repository": {
     "type": "git",
