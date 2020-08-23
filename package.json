@@ -32,8 +32,8 @@
     "type": "git",
     "url": "git+https://github.com/danielmatthew/accessible-web-components.git"
   },
-  "author": "Daniel Matthew",
-  "license": "MIT",
+  "author": "Dan Matthew",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/danielmatthew/accessible-web-components/issues"
   },
