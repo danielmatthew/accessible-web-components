@@ -1,6 +1,6 @@
 {
   "name": "@accessible-web-components/tabs",
-  "version": "0.3.0",
+  "version": "0.2.1",
   "description": "An accessible tabs web component",
   "type": "module",
   "main": "index.js",
@@ -16,7 +16,7 @@
     "accessibility"
   ],
   "author": "Dan Matthew",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
     "lit-element": "^2.3.1",
     "lit-html": "^1.2.1"
