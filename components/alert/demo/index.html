@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Alert | Accessible Web Components</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Optional polyfill for older browsers… -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.4.4/webcomponents-loader.js"></script>
+
+    <!-- Script imports and defines custom elements -->
+    <script type="module" src="../awc-alert.js"></script>
+  </head>
+  <body>
+    <h1>Alert</h1>
+
+    <h2>Basic alert</h2>
+    <awc-alert message="A plain old basic alert!"></awc-alert>
+
+    <h2>Alert with title</h2>
+    <awc-alert title="Alert title" message="An alert with a custom title" ></awc-alert>
+  </body>
+</html>

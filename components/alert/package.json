@@ -1,21 +1,41 @@
 {
-  "name": "alert",
-  "version": "0.0.0-alpha.1",
-  "description": "",
+  "name": "@accessible-web-components/alert",
+  "version": "1.0.0-rc.0",
+  "description": "An accessible alert web component",
+  "type": "module",
   "main": "index.js",
-  "private": "true",
+  "module": "index.js",
   "scripts": {
-    "start": "es-dev-server --app-index index.html --node-resolve --watch --open"
+    "start": "es-dev-server --app-index demo/index.html --node-resolve --watch --open --preserve-symlinks",
+    "test": "npx karma start ../../karma.conf.cjs",
+    "test:watch": "npx karma start ../../karma.conf.cjs --auto-watch=true --single-run=false"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "web components",
+    "lit-element",
+    "accessibility"
+  ],
+  "author": "Dan Matthew",
   "license": "ISC",
   "dependencies": {
     "lit-element": "^2.3.1",
     "lit-html": "^1.2.1"
   },
   "devDependencies": {
+    "@open-wc/testing": "^2.0.0",
+    "@open-wc/testing-karma": "^3.0.0",
     "es-dev-server": "^1.56.0",
     "semantic-release": "^17.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielmatthew/accessible-web-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danielmatthew/accessible-web-components/issues"
+  },
+  "homepage": "https://github.com/danielmatthew/accessible-web-components#readme",
+  "publishConfig": {
+    "access": "public"
   }
 }
