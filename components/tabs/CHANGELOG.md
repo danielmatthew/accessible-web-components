@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.2.2 (2020-08-23)</small>
+
+* chore(tabs): revert version number ([157b959](https://github.com/danielmatthew/accessible-web-components/commit/157b959))
+
+
+
+
+
 ## 0.3.0 (2020-08-23)
 
 * feat(alert): publish alert (#25) ([58cedac](https://github.com/danielmatthew/accessible-web-components/commit/58cedac)), closes [#25](https://github.com/danielmatthew/accessible-web-components/issues/25)
