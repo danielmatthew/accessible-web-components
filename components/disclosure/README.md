@@ -1,5 +1,10 @@
 # Dropdown
 
+- Two slots
+- One slot for Trigger
+- One slot for content to be displayed
+
+
 ## Aims
 - Toggle should be a button.
 - Toggle should have `aria-haspopup` attribute set to `true`.

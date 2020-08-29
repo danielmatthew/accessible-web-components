@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Disclosure Menu | Accessible Web Components</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- Optional polyfill for older browsers… -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.4.4/webcomponents-loader.js"></script>
+
+    <!-- Script imports and defines custom elements -->
+    <script type="module" src="../awc-disclosure.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Disclosure Menu</h1>
+
+      <section>
+        <h2>Example</h2>
+
+        <awc-disclosure>
+          <ul slot="content">
+            <li>Menu item</li>
+            <li>Menu item</li>
+            <li>Menu item</li>
+          </ul>
+        </awc-disclosure>
+      </section>
+  </main>
+</body>
+</html>
