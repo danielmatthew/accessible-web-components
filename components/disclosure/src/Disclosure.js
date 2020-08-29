@@ -1,39 +1,110 @@
-export class DisclosureMenu {
-  constructor(domNode) {
-    this.rootNode = domNode;
-    this.triggerNodes = [];
-    this.controlledNodes = [];
-    this.openIndex = null;
-    this.useArrowKeys = true;
+import { LitElement, html, css } from 'lit-element';
 
-    const buttons = this.rootNode.querySelectorAll('button[aria-expanded][aria-controls]');
-
-    for (let i = 0; i < buttons.length; i += 1) {
-      const button = buttons[i];
-      const menu = button.parentNode.querySelector('ul');
-      if (menu) {
-        this.triggerNodes.push(button);
-        this.controlledNodes.push(menu);
-
-        button.setAttribute('aria-expanded', 'false');
-        this.toggleExpand(menu, false);
-        this.rootNode.classList.add('js-dropdown-menu--active');
-        menu.classList.add('js-blog__category__menu--active');
-
-        menu.addEventListener('keydown', this.handleMenuKeyDown.bind(this));
-        button.addEventListener('click', this.handleButtonClick.bind(this));
-        button.addEventListener('keydown', this.handleButtonKeyDown.bind(this));
-      }
-
-      this.rootNode.addEventListener('focusout', this.handleBlur.bind(this));
-    }
+export class DisclosureMenu extends LitElement {
+  static get properties() {
+    return {
+      label: { type: String },
+    };
   }
 
-  // eslint-disable-next-line
-  toggleMenu(domNode, show) {
-    if (domNode) {
-      domNode.setAttribute('hidden', !show);
-    }
+  static get styles() {
+    return css`
+      button {
+        display: flex;
+        align-items: center;
+      }
+
+      button:after {
+        content: '';
+        border-bottom: 1px solid #000;
+        border-right: 1px solid #000;
+        height: 0.5em;
+        margin-left: 0.75em;
+        width: 0.5em;
+        transform: rotate(45deg);
+      }
+
+      button[aria-expanded='true']:after {
+        transform: rotate(-90deg);
+      }
+    `;
+  }
+
+  constructor() {
+    super();
+
+    this.label = 'My button label';
+
+    this._onSlotChange = this._onSlotChange.bind(this);
+
+    //     this.toggleExpand(menu, false);
+
+    //     menu.addEventListener('keydown', this.handleMenuKeyDown.bind(this));
+    //     button.addEventListener('click', this.handleButtonClick.bind(this));
+    //     button.addEventListener('keydown', this.handleButtonKeyDown.bind(this));
+    //   }
+
+    //   this.rootNode.addEventListener('focusout', this.handleBlur.bind(this));
+  }
+
+  get _trigger() {
+    return this.shadowRoot.querySelector('button');
+  }
+
+  get _content() {
+    return this.shadowRoot.querySelector('slot');
+  }
+
+  get _slottedChildren() {
+    const slot = this.shadowRoot.querySelector('slot');
+    const childNodes = slot.assignedNodes({ flatten: true });
+
+    return Array.prototype.filter.call(childNodes, node => node.nodeType === Node.ELEMENT_NODE);
+  }
+
+  firstUpdated() {
+    this._trigger.setAttribute('aria-expanded', false);
+    this._content.setAttribute('hidden', true);
+
+    this._content.addEventListener('slotchange', this._onSlotChange);
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+
+    this.removeEventListener('keydown', this._onKeyDown);
+    this.removeEventListener('click', this._onClick);
+  }
+
+  attributeChangedCallback(name, oldVal, newVal) {
+    super.attributeChangedCallback(name, oldVal, newVal);
+  }
+
+  _onSlotChange() {
+    this._linkContent();
+  }
+
+  _linkContent() {
+    const slotContent = this._slottedChildren;
+
+    slotContent[0].id = `awc-menu-${Date.now()}`;
+    this._trigger.setAttribute('aria-controls', slotContent[0].id);
+  }
+
+  render() {
+    return html`
+      <button type="button" @click="${this.handleButtonClick}">${this.label}</button>
+      <slot name="content"></slot>
+    `;
+  }
+
+  toggleMenu(expanded) {
+    this._trigger.setAttribute('aria-expanded', expanded);
+    this._content.toggleAttribute('hidden');
   }
 
   toggleExpand(index, expanded) {
@@ -82,6 +153,7 @@ export class DisclosureMenu {
 
   handleBlur(event) {
     const menuContainsFocus = this.rootNode.contains(event.relatedTarget);
+
     if (!menuContainsFocus && this.openIndex !== null) {
       this.toggleExpand(false);
     }
@@ -106,9 +178,10 @@ export class DisclosureMenu {
 
   handleButtonClick(event) {
     const button = event.target;
-    const buttonIndex = this.triggerNodes.indexOf(button);
+    // const buttonIndex = this.triggerNodes.indexOf(button);
     const buttonExpanded = button.getAttribute('aria-expanded') === 'true';
-    this.toggleExpand(buttonIndex, !buttonExpanded);
+    // this.toggleExpand(buttonIndex, !buttonExpanded);
+    this.toggleMenu(!buttonExpanded);
   }
 
   handleMenuKeyDown(event) {
@@ -127,9 +200,5 @@ export class DisclosureMenu {
     } else if (this.useArrowKeys) {
       this.controlFocusByKey(event, menuLinks, currentIndex);
     }
-  }
-
-  updateKeyControls(useArrowKeys) {
-    this.useArrowKeys = useArrowKeys;
   }
 }
