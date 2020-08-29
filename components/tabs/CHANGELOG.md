@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.3.0 (2020-08-29)
+
+* feat: add disclosure widget (#26) ([b16b449](https://github.com/danielmatthew/accessible-web-components/commit/b16b449)), closes [#26](https://github.com/danielmatthew/accessible-web-components/issues/26)
+* feat(alert): publish alert (#25) ([58cedac](https://github.com/danielmatthew/accessible-web-components/commit/58cedac)), closes [#25](https://github.com/danielmatthew/accessible-web-components/issues/25)
+* chore(release): publish ([e9800cb](https://github.com/danielmatthew/accessible-web-components/commit/e9800cb))
+* chore(release): publish ([78d410c](https://github.com/danielmatthew/accessible-web-components/commit/78d410c))
+* chore(tabs): revert version number ([157b959](https://github.com/danielmatthew/accessible-web-components/commit/157b959))
+
+
+
+
+
 ## <small>0.2.2 (2020-08-23)</small>
 
 * chore(tabs): revert version number ([157b959](https://github.com/danielmatthew/accessible-web-components/commit/157b959))
