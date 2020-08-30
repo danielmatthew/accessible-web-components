@@ -33,10 +33,10 @@ workflows:
     build-and-test:
       jobs:
         - build-and-test
-        - release:
-            filters:
-              branches:
-                only: main
-            requires:
-              - build-and-test
+        # - release:
+        #     filters:
+        #       branches:
+        #         only: main
+        #     requires:
+        #       - build-and-test
 
