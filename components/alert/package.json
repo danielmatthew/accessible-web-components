@@ -1,14 +1,14 @@
 {
   "name": "@accessible-web-components/alert",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0",
   "description": "An accessible alert web component",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
   "scripts": {
     "start": "es-dev-server --app-index demo/index.html --node-resolve --watch --open --preserve-symlinks",
-    "test": "npx karma start ../../karma.conf.cjs",
-    "test:watch": "npx karma start ../../karma.conf.cjs --auto-watch=true --single-run=false"
+    "test": "karma start --coverage",
+    "test:watch": "karma start --auto-watch=true --single-run=false"
   },
   "keywords": [
     "web components",
@@ -25,7 +25,8 @@
     "@open-wc/testing": "^2.0.0",
     "@open-wc/testing-karma": "^3.0.0",
     "es-dev-server": "^1.56.0",
-    "semantic-release": "^17.1.1"
+    "semantic-release": "^17.1.1",
+    "deepmerge": "^3.2.0"
   },
   "repository": {
     "type": "git",
